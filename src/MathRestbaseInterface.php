@@ -224,7 +224,8 @@ class MathRestbaseInterface {
 	 */
 	public function getUrl( $path, $internal = true ) {
 		global $wgVirtualRestConfig, $wgMathFullRestbaseURL, $wgVisualEditorFullRestbaseURL;
-		if ( $internal && isset( $wgVirtualRestConfig['modules']['restbase'] ) ) {
+		// https://phabricator.wikimedia.org/T306572
+		if ( false && $internal && isset( $wgVirtualRestConfig['modules']['restbase'] ) ) {
 			return "/mathoid/local/v1/$path";
 		}
 		if ( $wgMathFullRestbaseURL ) {
